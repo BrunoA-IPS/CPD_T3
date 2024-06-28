@@ -3,15 +3,12 @@
 
 """
 
+import os
 from flask import Flask, request, jsonify, make_response
 from flask_restful import Resource, Api, reqparse, abort
 # https://flask-restful.readthedocs.io/en/latest/quickstart.html
 
 from models import Database
-
-
-import sys
-print('\n'.join(sys.path)) # does this show the files and folders you need?
 
 
 
@@ -20,7 +17,7 @@ print('\n'.join(sys.path)) # does this show the files and folders you need?
 # ==========
 
 # Creates an sqlite database in memory
-db = Database(filename=':memory:', schema='./schema.sql')
+db = Database(filename=':memory:', schema=f'{os.getcwd()}/schema.sql')
 db.recreate()
 
 

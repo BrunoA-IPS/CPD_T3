@@ -3,7 +3,6 @@
 
 """
 
-import enum
 from flask import Flask, request, jsonify, make_response
 from flask_restful import Resource, Api, reqparse, abort
 # https://flask-restful.readthedocs.io/en/latest/quickstart.html
@@ -17,7 +16,7 @@ from models import Database
 # ==========
 
 # Creates an sqlite database in memory
-db = Database(filename=':memory:', schema='schema.sql')
+db = Database(filename=':memory:', schema='./schema.sql')
 db.recreate()
 
 
@@ -389,4 +388,5 @@ api.add_resource(ApiTaskDetails, "/api/projects/<string:project>/tasks/<string:t
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000)
+    # app.run(host='0.0.0.0', port=8000)
+    pass

@@ -10,6 +10,10 @@ from flask_restful import Resource, Api, reqparse, abort
 from models import Database
 
 
+import sys
+print('\n'.join(sys.path)) # does this show the files and folders you need?
+
+
 
 # ==========
 #  Database

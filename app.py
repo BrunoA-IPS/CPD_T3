@@ -12,12 +12,17 @@ from models import Database
 
 
 
+IS_DEVELOPMENT = False
+
+
+
 # ==========
 #  Database
 # ==========
 
 # Creates an sqlite database in memory
-db = Database(filename=':memory:', schema=f'{os.getcwd()}/schema.sql')
+schema_path = "/schema.sql" if IS_DEVELOPMENT else "/CPD_T3/"
+db = Database(filename=':memory:', schema=f'{os.getcwd()}{schema_path}')
 db.recreate()
 
 
@@ -389,5 +394,5 @@ api.add_resource(ApiTaskDetails, "/api/projects/<string:project>/tasks/<string:t
 
 
 if __name__ == "__main__":
-    # app.run(host='0.0.0.0', port=8000)
-    pass
+    if IS_DEVELOPMENT:
+        app.run(host='0.0.0.0', port=8000)

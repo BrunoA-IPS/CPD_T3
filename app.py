@@ -21,7 +21,7 @@ IS_DEVELOPMENT = False
 # ==========
 
 # Creates an sqlite database in memory
-schema_path = "/schema.sql" if IS_DEVELOPMENT else "/CPD_T3/"
+schema_path = "/schema.sql" if IS_DEVELOPMENT else "/CPD_T3/schema.sql"
 db = Database(filename=':memory:', schema=f'{os.getcwd()}{schema_path}')
 db.recreate()
 

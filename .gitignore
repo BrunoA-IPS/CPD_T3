@@ -3,3 +3,6 @@ TP3.pdf
 tests.py
 
 __pycache__
+
+word.*
+~$word.*

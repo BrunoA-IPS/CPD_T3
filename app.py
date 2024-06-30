@@ -12,7 +12,7 @@ from models import Database
 
 
 
-IS_DEVELOPMENT = True
+IS_DEVELOPMENT = False
 
 
 
